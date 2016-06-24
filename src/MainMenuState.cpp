@@ -1,7 +1,6 @@
 #include "MainMenuState.h"
 #include "GameplayState.h"
 
-
 MainMenuState::MainMenuState(GameStateManager *engine) : GameState(engine)
 {
 }
@@ -12,10 +11,9 @@ MainMenuState::~MainMenuState()
 void MainMenuState::initialize()
 {
     FontManager *fonts = engine->getFontManager();
-    fonts->loadFontWithName("ostrich-bold.ttf", 64);
-    fonts->loadFontWithName("ostrich-regular.ttf", 32);
+    fonts->loadFontWithName("nimbus-sans-bold.ttf", 64);
+    fonts->loadFontWithName("nimbus-sans-regular.ttf", 32);
 
-    engine->getTextureManager()->loadTextureWithName("menu_background.png");
     SDL_Log("Main menu initialized");
 
     //Play music?
@@ -66,30 +64,18 @@ void MainMenuState::render()
 
     SDL_Rect loc = {0, 0, 800, 600};
 
-    graphics->drawTexture(engine->getTextureManager()->getTextureForName("menu_background.png")->getTexture(), &loc);
-
-    TTF_Font *boldFont = engine->getFontManager()->getFontWithName("ostrich-bold.ttf", 64);
-    TTF_Font *font = engine->getFontManager()->getFontWithName("ostrich-regular.ttf", 32);
+    TTF_Font *boldFont = engine->getFontManager()->getFontWithName("nimbus-sans-bold.ttf", 64);
+    TTF_Font *font = engine->getFontManager()->getFontWithName("nimbus-sans-regular.ttf", 32);
 
     int w = 0;
     int h = 0;
-    TTF_SizeText(boldFont, "Walkers", &w, &h);
+    TTF_SizeText(boldFont, "INACTION", &w, &h);
     loc = {800/2 - w/2, 40, w, h};
-    renderFontAt(boldFont, loc, "Walkers");
+    renderFontAt(boldFont, loc, "INACTION");
 
     std::string instructions = "Press <Enter> to play, or 'q' to quit.";
     TTF_SizeText(font, instructions.c_str(), &w, &h);
     loc = {800/2 - w/2, 600/2 - h, w, h};
-    renderFontAt(font, loc, instructions);
-
-    instructions = "Press W,A,S,D to move. Space shoots.";
-    TTF_SizeText(font, instructions.c_str(), &w, &h);
-    loc = {5, 600 - h, w, h};
-    renderFontAt(font, loc, instructions);
-
-    instructions = "Hold Q on a corpse to loot it, E to burn it";
-    TTF_SizeText(font, instructions.c_str(), &w, &h);
-    loc = {800 - w - 5, 600 - h, w, h};
     renderFontAt(font, loc, instructions);
 
     graphics->render();

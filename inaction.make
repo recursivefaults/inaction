@@ -64,6 +64,36 @@ ifeq ($(config),release)
 endif
 
 OBJECTS := \
+	$(OBJDIR)/Entity.o \
+	$(OBJDIR)/EntityFactory.o \
+	$(OBJDIR)/FontManager.o \
+	$(OBJDIR)/GameOverState.o \
+	$(OBJDIR)/GameplayState.o \
+	$(OBJDIR)/GameStateManager.o \
+	$(OBJDIR)/Graphics.o \
+	$(OBJDIR)/main.o \
+	$(OBJDIR)/MainMenuState.o \
+	$(OBJDIR)/Map.o \
+	$(OBJDIR)/Room.o \
+	$(OBJDIR)/RoomFactory.o \
+	$(OBJDIR)/SoundEngine.o \
+	$(OBJDIR)/SoundManager.o \
+	$(OBJDIR)/SystemFactory.o \
+	$(OBJDIR)/Tile.o \
+	$(OBJDIR)/Vector2d.o \
+	$(OBJDIR)/World.o \
+	$(OBJDIR)/asset_helper.o \
+	$(OBJDIR)/TextureManager.o \
+	$(OBJDIR)/CollisionSystem.o \
+	$(OBJDIR)/CorpseSystem.o \
+	$(OBJDIR)/DamageSystem.o \
+	$(OBJDIR)/FacingSystem.o \
+	$(OBJDIR)/MonsterSpawningSystem.o \
+	$(OBJDIR)/MonsterSystem.o \
+	$(OBJDIR)/MoveSystem.o \
+	$(OBJDIR)/ParticleSystem.o \
+	$(OBJDIR)/RemoveSystem.o \
+	$(OBJDIR)/ShootingSystem.o \
 
 RESOURCES := \
 
@@ -122,6 +152,126 @@ $(GCH): $(PCH)
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) -x c++-header $(ALL_CXXFLAGS) -MMD -MP $(DEFINES) $(INCLUDES) -o "$@" -MF "$(@:%.gch=%.d)" -c "$<"
 endif
+
+$(OBJDIR)/Entity.o: src/Entity.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/EntityFactory.o: src/EntityFactory.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/FontManager.o: src/FontManager.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/GameOverState.o: src/GameOverState.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/GameplayState.o: src/GameplayState.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/GameStateManager.o: src/GameStateManager.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/Graphics.o: src/Graphics.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/main.o: src/main.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/MainMenuState.o: src/MainMenuState.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/Map.o: src/Map.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/Room.o: src/Room.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/RoomFactory.o: src/RoomFactory.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/SoundEngine.o: src/SoundEngine.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/SoundManager.o: src/SoundManager.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/SystemFactory.o: src/SystemFactory.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/Tile.o: src/Tile.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/Vector2d.o: src/Vector2d.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/World.o: src/World.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/asset_helper.o: src/assets/asset_helper.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/TextureManager.o: src/assets/TextureManager.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/CollisionSystem.o: src/systems/CollisionSystem.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/CorpseSystem.o: src/systems/CorpseSystem.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/DamageSystem.o: src/systems/DamageSystem.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/FacingSystem.o: src/systems/FacingSystem.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/MonsterSpawningSystem.o: src/systems/MonsterSpawningSystem.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/MonsterSystem.o: src/systems/MonsterSystem.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/MoveSystem.o: src/systems/MoveSystem.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/ParticleSystem.o: src/systems/ParticleSystem.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/RemoveSystem.o: src/systems/RemoveSystem.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
+$(OBJDIR)/ShootingSystem.o: src/systems/ShootingSystem.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 
 -include $(OBJECTS:%.o=%.d)
 ifneq (,$(PCH))
