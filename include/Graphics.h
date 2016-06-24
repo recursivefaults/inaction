@@ -1,7 +1,7 @@
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 
-#include "walkers.h"
+#include "main.h"
 #include <SDL2/SDL_ttf.h>
 #include <string>
 

@@ -1,6 +1,6 @@
 #include <string>
 
-#include "walkers.h"
+#include "main.h"
 #include "GameplayState.h"
 #include "Components.h"
 #include "SystemFactory.h"

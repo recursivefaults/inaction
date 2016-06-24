@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "walkers.h"
+#include "main.h"
 
 enum class ComponentTypes
 {

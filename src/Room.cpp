@@ -1,5 +1,5 @@
 #include "Room.h"
-#include "walkers.h"
+#include "main.h"
 
 Room::Room(const int _width, const int _height) : width(_width), height(_height)
 {

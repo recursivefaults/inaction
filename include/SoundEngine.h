@@ -1,7 +1,7 @@
 #ifndef SOUND_ENGINE_H
 #define SOUND_ENGINE_H
 
-#include "walkers.h"
+#include "main.h"
 #include "SoundManager.h"
 
 class SoundEngine

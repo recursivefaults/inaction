@@ -1,4 +1,4 @@
-#include "walkers.h"
+#include "main.h"
 #include "MainMenuState.h"
 
 int main()
